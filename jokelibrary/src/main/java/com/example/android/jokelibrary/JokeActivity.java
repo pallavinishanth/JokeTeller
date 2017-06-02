@@ -1,9 +1,11 @@
 package com.example.android.jokelibrary;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 /**
  * Created by PallaviNishanth on 5/26/17.
@@ -15,6 +17,16 @@ public class JokeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.joke_activity);
+
+        TextView joketextview = (TextView)findViewById(R.id.JokeText);
+
+        Intent intent = getIntent();
+
+        if(intent.hasExtra("joke")){
+
+            String joke = intent.getStringExtra("joke");
+            joketextview.setText(joke);
+        }
     }
 
 
