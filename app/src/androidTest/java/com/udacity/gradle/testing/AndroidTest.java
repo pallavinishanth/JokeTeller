@@ -28,6 +28,10 @@ public class AndroidTest {
     public ActivityTestRule<MainActivity> mActivityRule =
             new ActivityTestRule<>(MainActivity.class);
 
+
+    /**
+     * Test to verify joke is a non-empty string
+     */
     @Test
     public void testVerifyjokeNotnull(){
 
